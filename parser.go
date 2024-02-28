@@ -5,11 +5,6 @@ import (
 	"strings"
 )
 
-type Rule struct {
-	From string
-	To   string
-}
-
 var ruleRegex = regexp.MustCompile("\"(?P<from>.+)\" *-> *\"(?P<to>.+)\"")
 
 func ParseRule(ruleStr string) Rule {
