@@ -15,8 +15,8 @@ func ParseRule(ruleStr string) Rule {
 	}
 }
 
-func ParseRuleset(set string) []Rule {
-	rules := []Rule{}
+func ParseRuleset(set string) Ruleset {
+	rules := Ruleset{}
 	for _, line := range strings.Split(set, "\n") {
 		if isEmpty(line) {
 			continue

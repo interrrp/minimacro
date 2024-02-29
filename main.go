@@ -33,12 +33,7 @@ func main() {
 			fmt.Fprintf(os.Stderr, "skipping %s: %s", match, err)
 			continue
 		}
-
-		out := string(cont)
-		for _, r := range ruleset {
-			out = r.Apply(out)
-		}
-		os.WriteFile(match, []byte(out), 0777)
+		os.WriteFile(match, []byte(ruleset.Apply(string(cont))), 0777)
 		fmt.Println(match)
 	}
 }

@@ -24,7 +24,7 @@ func TestParseRuleset(t *testing.T) {
 "Goodbye" -> "Hello "
 " Bye  "  ->"Hi"
 	`)
-	assert.Equal(t, []Rule{
+	assert.Equal(t, Ruleset{
 		{From: "Goodbye", To: "Hello "},
 		{From: " Bye  ", To: "Hi"},
 	}, rs)

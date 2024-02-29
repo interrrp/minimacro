@@ -16,3 +16,11 @@ func TestApplyRule(t *testing.T) {
 		assert.Equal(t, "Hello, world!", r.Apply("Goodbye, world!"))
 	})
 }
+
+func TestApplyRuleset(t *testing.T) {
+	rs := Ruleset{
+		{From: "Goodbye", To: "Hello"},
+		{From: "adieu", To: "bonjour"},
+	}
+	assert.Equal(t, "Hello (bonjour), world (monde)!", rs.Apply("Goodbye (adieu), world (monde)!"))
+}
